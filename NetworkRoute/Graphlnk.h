@@ -15,11 +15,6 @@ public:
 	E getWeight(int v1,int v2);			
 	bool insertVertex(const T vertex);
 	bool removeVertex(int v);
-	/*
-	    @v1 -- startNum
-		@v2 -- endNum
-		@cost -- routeDistance
-	  */
 	bool insertEdge(int v1, int v2, E cost); 
 	bool removeEdge(int v1,int v2);
 	int getFirstNeighbor(int v);
