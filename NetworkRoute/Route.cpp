@@ -53,7 +53,7 @@ template<class T,class E>
 //删除路由器结点
 void DelVertex(Graphlnk<T,E> &G, VertexInfo del){        
 	int delNum = G.getVertexPos(del);
-	bool result = G.removeVertex(delNum);        //需要先查找节点存放在数组的位置吧  v-->__
+	bool result = G.removeVertex(delNum);     
 	if(result){
 		cout<<"删除路由器结点"<<del.name<<"成功"<<endl;
 	}else{

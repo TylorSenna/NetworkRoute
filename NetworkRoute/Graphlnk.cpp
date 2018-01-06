@@ -149,9 +149,11 @@ bool Graphlnk<T,E>::removeVertex(int v)
 	while (p!= NULL)
 	{
 		s = NodeTable[p->dest].adj;
-		while (s!= NULL)
+		while (s!= NULL){
 			if(s ->dest == numVertices){ s->dest = v;break;}
 			else s = s->link;
+		}
+		p = p->link;
 	}
 	return true;
 }

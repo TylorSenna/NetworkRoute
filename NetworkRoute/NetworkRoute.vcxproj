@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="GraphApp.cpp" />
     <ClCompile Include="Graphlnk.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="Route.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
