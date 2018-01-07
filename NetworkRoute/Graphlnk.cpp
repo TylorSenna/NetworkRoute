@@ -260,3 +260,5 @@ ostream& operator << (ostream& out,Graphlnk<T,E>& G)
 	}
 	return out;
 }
+
+

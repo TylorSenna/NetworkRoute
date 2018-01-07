@@ -8,16 +8,16 @@ using namespace std;
 int main()
 {
 	int n = 0,e = 0;
-	ifstream fin1("data.txt");
-	ifstream fin2("table.txt");
+	fstream fin1("data.txt");
+	fstream fin2("table.txt");
 	fin1>>n;
-	VertexInfo v[9];                    //顶点信息
+	VertexInfo * v = new VertexInfo[n];                    //顶点信息
 	for(int i = 0; i<n; i++){
 		fin1>>v[i].name;
 		fin1>>v[i].network;
 	}
 	fin2>>e;
-	RowColWeight rcw1[16];         //边信息
+	RowColWeight * rcw1 = new RowColWeight[e];         //边信息
 	for(int i = 0; i<e; i++){
 		fin2>>rcw1[i].row;
 		rcw1[i].row--;
@@ -107,6 +107,27 @@ int main()
 			break;
 		}	
 	}
-	
+	fin1.close();
+	fin2.close();
+	fstream fout1("data.txt",ios::out);
+	fstream fout2("table.txt",ios::out);
+	//文件输出  输出结点信息  路由边信息
+	fout1<<g2.NumberOfVertices()<<endl;
+	for(i=0;i< g2.NumberOfVertices(); i++){
+		fout1<<g2.getValue(i).name<<" "<<g2.getValue(i).network<<endl;
+	}
+	fout2<<g2.NumberOfEdges()<<endl;
+	for(i=0;i<g2.NumberOfVertices();i++)
+	{
+		for(j=i;j<g2.NumberOfVertices();j++)
+		{
+			if(g2.getWeight(i,j)== maxWeight)
+				continue;           //没有邻接边 直接跳到下一个循环
+			else
+				fout2<<i+1<<" "<<j+1<<" "<<g2.getWeight(i,j)<<endl;
+		}
+	}
+	fout1.close();
+	fout2.close();
 	return 0;
 } 
