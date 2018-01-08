@@ -6,7 +6,7 @@ using namespace std;
 #include "Graphlnk.cpp"
 
 int main()
-{
+{  cout<<"»ÆÉ­"<<endl; 
 	int n = 0,e = 0;
 	fstream fin1("data.txt");
 	fstream fin2("table.txt");
