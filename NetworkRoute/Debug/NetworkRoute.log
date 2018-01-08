@@ -1,10 +1,9 @@
-﻿生成启动时间为 2018/1/8 2:11:22。
-     1>项目“E:\vs2012\documents\NetworkRoute\NetworkRoute\NetworkRoute.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2018/1/8 9:10:28。
+     1>项目“E:\vs2012\documents\NetworkRoute\NetworkRoute\NetworkRoute.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>ClCompile:
-         E:\vs2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt menu.cpp
+         E:\vs2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GraphApp.cpp Graphlnk.cpp menu.cpp Route.cpp
+         Route.cpp
          menu.cpp
-     1>e:\vs2012\documents\networkroute\networkroute\menu.cpp(43): warning C4101: “b”: 未引用的局部变量
-     1>e:\vs2012\documents\networkroute\networkroute\menu.cpp(43): warning C4101: “c”: 未引用的局部变量
      1>e:\vs2012\documents\networkroute\networkroute\graphlnk.cpp(124): warning C4101: “i”: 未引用的局部变量
                  e:\vs2012\documents\networkroute\networkroute\graphlnk.cpp(121): 编译类 模板 成员函数“bool Graphlnk<T,E>::removeVertex(int)”时
                  with
@@ -12,13 +11,16 @@
                      T=VertexInfo,
                      E=int
                  ]
-                 e:\vs2012\documents\networkroute\networkroute\menu.cpp(35): 参见对正在编译的类 模板 实例化“Graphlnk<T,E>”的引用
+                 e:\vs2012\documents\networkroute\networkroute\menu.cpp(34): 参见对正在编译的类 模板 实例化“Graphlnk<T,E>”的引用
                  with
                  [
                      T=VertexInfo,
                      E=int
                  ]
-     1>e:\vs2012\documents\networkroute\networkroute\graphlnk.cpp(12): warning C4715: “Graphlnk<VertexInfo,int>::getValue”: 不是所有的控件路径都返回值
+         Graphlnk.cpp
+         GraphApp.cpp
+         正在生成代码...
+     1>e:\vs2012\documents\networkroute\networkroute\graphlnk.cpp(59): warning C4715: “Graphlnk<VertexInfo,int>::getValue”: 不是所有的控件路径都返回值
      1>e:\vs2012\documents\networkroute\networkroute\graphlnk.cpp(106): warning C4715: “Graphlnk<VertexInfo,int>::getWeight”: 不是所有的控件路径都返回值
        Link:
          E:\vs2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\vs2012\documents\NetworkRoute\Debug\NetworkRoute.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\vs2012\documents\NetworkRoute\Debug\NetworkRoute.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\vs2012\documents\NetworkRoute\Debug\NetworkRoute.lib" /MACHINE:X86 Debug\GraphApp.obj
@@ -26,8 +28,8 @@
          Debug\menu.obj
          Debug\Route.obj
          NetworkRoute.vcxproj -> E:\vs2012\documents\NetworkRoute\Debug\NetworkRoute.exe
-     1>已完成生成项目“E:\vs2012\documents\NetworkRoute\NetworkRoute\NetworkRoute.vcxproj”(Build 个目标)的操作。
+     1>已完成生成项目“E:\vs2012\documents\NetworkRoute\NetworkRoute\NetworkRoute.vcxproj”(Rebuild 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.96
+已用时间 00:00:02.03

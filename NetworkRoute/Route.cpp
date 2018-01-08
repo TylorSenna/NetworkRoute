@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 #include "Route.h"
 
@@ -72,4 +73,29 @@ void DelRoute(Graphlnk<T,E> &G, VertexInfo s, VertexInfo e){
 	}else{
 	    cout<<"删除路由线路（"<<s.name<<","<<e.name<<")失败"<<endl;
 	}
+}
+
+template<class T,class E>
+//打印出路由边
+void printEdges(Graphlnk<T,E> &G){
+	for(int i=0;i<G.NumberOfVertices();i++)
+	{
+		for(int j=0;j<G.NumberOfVertices();j++)
+		{
+			if(G.getWeight(i,j)== maxWeight)
+				cout<<setw(10)<<"Max";
+			else
+				cout<<setw(10)<<G.getWeight(i,j);
+		}
+		cout<<"\n";
+	}
+}
+
+template<class T,class E>
+//打印出路由器结点
+void printVertices(Graphlnk<T,E> &G){
+	for(int i=0;i< G.NumberOfVertices();i++){
+		cout<<"     路由器"<<G.getValue(i).name<<"    网络号："<<G.getValue(i).network<<endl;
+	}
+	cout<<"\n";
 }

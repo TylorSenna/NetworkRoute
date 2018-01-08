@@ -1,16 +1,5 @@
 #include "Graphlnk.h"
 
-
-template<class T,class E>
-T Graphlnk<T,E>::getValue(int i)					
-	{
-		if(i>=0 && i< numVertices){
-		    return NodeTable[i].data;
-		}else{
-		    cerr<<"i越界"<<endl;
-		}
-	}
-
 template<class T,class E>
 Graphlnk<T,E>::Graphlnk(int sz)
 {
@@ -56,6 +45,17 @@ int Graphlnk<T,E>::getVertexPos(const T vertex)
 		if(NodeTable[i].data == vertex)
 			return i;
 	return -1;
+}
+
+template<class T,class E>
+//通过路由器在数组中的位置（序号）获取数据域data
+T Graphlnk<T,E>::getValue(int i)					
+{
+	if(i>=0 && i< numVertices){
+		return NodeTable[i].data;
+	}else{
+		cerr<<"i越界"<<endl;
+	}
 }
 
 template<class T,class E>
@@ -231,6 +231,7 @@ bool Graphlnk<T,E>::removeEdge(int v1,int v2)
 			q->link = p->link;
 		}
 		delete p;
+		numEdges--;
 		return true;
 	}
 	return false;

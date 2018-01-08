@@ -39,7 +39,7 @@ int main()
 	cout<<g2;						//输出图
 	ShortestPath(g2,0,distance,path);//输出最短路由路径
 	
-	int a, b, c, i, j, num;
+	int a, i, j, num;
 	VertexInfo start, end, add, del;
 	bool quit = false;
 	while (!quit)
@@ -53,14 +53,13 @@ int main()
 		cout << "6 删除指定路由（边） " << endl;
 		cout << "7 删除指定路由器 " << endl;
 		cout<<"0安全退出"<<endl;
+		cout<<"请输入序号选择功能："<<endl;
 		cin >> a;
 		switch (a)
 		{
 		case 0:quit = true; break;
 		case 1:cout<<"结点集合为:"<<endl;
-			for(i=0;i< g2.NumberOfVertices();i++)
-				cout<<"     路由器"<<g2.getValue(i).name<<"    网络号："<<g2.getValue(i).network<<endl;
-			cout<<"\n";
+			printVertices(g2);
 			break;
 		case 2: cout << g2;break;
 		case 3:cout << "请选择路由器序号输出最短路由" << endl;
@@ -81,25 +80,13 @@ int main()
 			break;      
 		case 6:cout << "请选择删除的边" << endl;
 			cout<<"路由边集合为:\n";
-			for(i=0;i<g2.NumberOfVertices();i++)
-			{
-				for(j=0;j<g2.NumberOfVertices();j++)
-				{
-					if(g2.getWeight(i,j)== maxWeight)
-						cout<<setw(10)<<"Max";
-					else
-						cout<<setw(10)<<g2.getWeight(i,j);
-				}
-				cout<<"\n";
-			}
+			printEdges(g2);
 			cout << "请输入删除的起点终点" << endl;
 			cin>>start.name>>del.name;
 			DelRoute(g2,start,del);
 			break;
 		case 7:cout << "请选择删除的路由器序号" << endl;
-			for(i=0;i< g2.NumberOfVertices();i++)
-				cout<<"     路由器"<<g2.getValue(i).name<<"    网络号："<<g2.getValue(i).network<<endl;
-			cout<<"\n";
+			printVertices(g2);
 			cin>>del.name;
 			DelVertex(g2,del);
 			break;
@@ -119,11 +106,12 @@ int main()
 	fout2<<g2.NumberOfEdges()<<endl;
 	for(i=0;i<g2.NumberOfVertices();i++)
 	{
-		for(j=i;j<g2.NumberOfVertices();j++)
+		for(j=i;j<=g2.NumberOfVertices();j++)
 		{
 			if(g2.getWeight(i,j)== maxWeight)
 				continue;           //没有邻接边 直接跳到下一个循环
 			else
+
 				fout2<<i+1<<" "<<j+1<<" "<<g2.getWeight(i,j)<<endl;
 		}
 	}
