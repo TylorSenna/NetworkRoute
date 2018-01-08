@@ -22,6 +22,8 @@ void CreatGraph(Graphlnk<T,E> &G, VertexInfo V[], int n, RowColWeight E[],int e)
 	//在图G中插入e条边
 	for(int k = 0; k < e; k++) 
 		G.insertEdge(E[k].row, E[k].col, E[k].weight);
+
+	cout<<"hgyhgyhgyhgyhgyhgyhgyhgyhgyhgyhgyhgyhgyhgy"<<endl;
 }
 
 template<class T,class E>
